@@ -23,20 +23,20 @@
 # print(phrase.replace(find, replace))
 # x = input()
 # print(x.replace("ё", "е"))
-alphabet = {
-    "а": "a",
-    "б": "b",
-    "в": "v",
-    "г": "g",
-    "д": "d",
-    "е": "e",
-    "ё": "yo",
-    "ж": "zh",
-
-}
-
-phrase = input("Введите фразу:")
-translate = ""
-for bukva in phrase:
-    translate = translate + alphabet[bukva]
-print(translate)
+# alphabet = {
+#     "а": "a",
+#     "б": "b",
+#     "в": "v",
+#     "г": "g",
+#     "д": "d",
+#     "е": "e",
+#     "ё": "yo",
+#     "ж": "zh",
+#
+# }
+#
+# phrase = input("Введите фразу:")
+# translate = ""
+# for bukva in phrase:
+#     translate = translate + alphabet[bukva]
+# print(translate)
