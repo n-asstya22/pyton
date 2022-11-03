@@ -58,10 +58,27 @@
 #     pass
 # if 5 == 5:
 #     pass  #TODO: дописать
+#
+# try:
+#     x = input("Введи имя:")
+#     if x == "Антон":
+#         raise Exception("Антона в обиду не дам")
+# except Exception as error_message :
+#     print()
 
+inst = []
 try:
-    x = input("Введи имя:")
-    if x == "Антон":
-        raise Exception("Антона в обиду не дам")
-except Exception as error_message :
-    print()
+    f = open("text.txt")
+except FileNotFoundError:
+    print("Ну, не получилось")
+else:
+    try:
+        for line in f:
+            inst.append(int(line))
+    except ValueError:
+        print("Тут не число")
+    else:
+        print(inst)
+    finally:    #вообще в любом случае
+        f.close()
+        print("Я закончил файл")
