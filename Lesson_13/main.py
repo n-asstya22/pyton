@@ -51,7 +51,7 @@
 #
 # size = randint(100, 1000)
 # r_start = 0
-# r_end = 10_000 #декоративный разделитель
+# r_end = 10_000 
 # for _ in range(size):
 #     lst1.append(randint(r_start,r_end))
 #     lst2.append(randint(r_start, r_end))
