@@ -1,86 +1,75 @@
-# #Словари
-# d = {}      #пустой список
-# d = dict()  #пустой список
-#
-# d = {"ключ1": 1,
-#      10: "два",
-#      True: "Ложь",
-#      " ": 0,
-#      "" : 2,
-#      (1, 2, 3) : "e"}
-#Функция
-# def Hello_world() : #обьявление функции
-#     print("hello_world")
-#
-# Hello_world() #вызов функций
 
-# def funs (imya):
-#     print("привет",imya)
-#
-# #-----------------------
-# name = input("Ваше имя:")
-# funs(imya=name) #вызов функции с аргуменом
+# def plus_one(a,b): #обьявление о функции с двумя аргуменами
+#     return a+b+1
+# print (plus_one(5,4))
 
-# def s(chislo1, chislo2):
-#     result = chislo1 + chislo2
-#     return result #return = вернуть что-то из функции
-#
-# print(s(0,0)) #вывод результата функции(то что вернет return)
-# x = s(5,2)
+# plus_one_2 = lambda a, b: a+b+1
 
-# def more_than_5(number):
-#     if number>5:
-#        return True
-#
-# more_5(8):#если выполниться
-#     print("класс")
-#
+# #if - else
+# result = lambda answer:True if answer == "д" else False
 
- #задача1
-# def is_sorted(spisok):
-#      ss = sorted(spisok)
-#      if spisok == ss:
-#          return True
+#list comprehension
+# spisok= []
+# for i in range(1, 6):
+#     spisok.append(1)
+# print(spisok)
 #
+# spisok2 = [for i in range(1,6)]:
 #
-#
-# spisok = [1, 2, 5, 6, 78, 123]
-# if is_sorted(spisok):
-#     print("Ура,сортировано ")
+# #list comprehension пишется в []
+# #for i in range(1,6)  - обычный цикл for --> ск раз повторяется
+# #все,что слева от for --> элементы в списке
+# print(spisok2)
+
+
+# #1 задача
+# c2f = lambda c:9/5 * c + 32
+# f2c = lambda f:(f - 32)* 5/9
+# c2k = lambda c:c + 273.15
+# k2c = lambda k:k - 273.15
+# f2k = lambda f:c2k(f2c(f))
+# print(f2k(203))
+
+#2 задача
+#  from random import randint
+#  l = lambda zxc:True if zxc == "Д" else False
+# while True:
+#     a = int(input("Сколько раз кидаем кубик?"))
+#     dies = [randint (1,6)for i in range(a)]
+#     print(dies)     b = input("Выходим? (Д/Н)").upper()
+#     if l(b):# если игрок решил выйти
+#          break
+# #3 Задача
+# from random import choice
+# chars = [list("АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"),
+#           list("абвгдеёжзийклмнопрстуфхцчшщъыьэюя"),
+#           list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"),
+#           list("abcdefghijklmnopqrstuvwxyz"),
+#           list("1234567890")
+#          ]
+# a = [choice(choice(chars)) for i in range(6)]
+# a2 = ("".join(a))
+# d = {}
+# link = "https://www.google.com"
+# if link in d:
+#     print("Ссылка уже есть в базе,вот код")
+#     print(d[link])
 # else:
-#     print("Не сортировано")
- #задача2
-# def find_lonest(n:list):
-#     s1 = []
-#     for i in n:
-#         s1.append(len(i))
-#     maxy = max(s1)
-#     ind = s1.index(maxy) #нашли индекс maxy
-#     return s[ind],maxy
-#
-# s = ["слон","кот","Россия"]
-# print(find_lonest(s))
-#задача3
-# def min_max(spisok):
-#
-#     # min = min(spisok)
-#     # max = max(spisok)
-#     s = sorted(spisok)
-#     mini = s[0] #минимум
-#     maxi = s[-1] #максимум
-#     return mini, maxi
-# spisok = [17,213,23,3]
-# print(min_max(spisok))
-#Задача4
-def is_prime(celogo_chislo):
-    for i in range(2,celogo_chislo + 1):
-        if i == celogo_chislo :
-            return True
-        if celogo_chislo % i == 0:
-            break
+#     print("Ссылка добавлена в базу,вот ее код")
+#     d[link] = a2
+4. Задача
+u = lambda a, b:a / b
+print(u(6,3))
+u2 =lambda a, b:a % b
+print(u2(6,3))
+u3 = lambda a, b:a // b
+print(u3(6,3))
+u4 = lambda a, b:a**b
+print(u4(6,3))
+u5 =lambda a:-a if a < 0 else a #если число отрицательное,
+#то меняем знак на противоположный
+print(u5(-6))
 
 
-if is_prime(37221):
-    print("простое число")
-else:
-    print("НЕ простое число")
+
+
