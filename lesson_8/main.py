@@ -51,11 +51,11 @@
 #
 # colors = ["red","orange","yellow","green","light blue","blue","purple"]
 # angle = 360/7
-# for i in range(0,7):
-#     t.color(colors[i])
+# for img in range(0,7):
+#     t.color(colors[img])
 #     t.fd(80)
 #     t.rt(angle)
-#     print(i)
+#     print(img)
 #
 #
 # sreen.exitonclick()

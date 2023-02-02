@@ -10,14 +10,14 @@
 
 #list comprehension
 # spisok= []
-# for i in range(1, 6):
+# for img in range(1, 6):
 #     spisok.append(1)
 # print(spisok)
 #
-# spisok2 = [for i in range(1,6)]:
+# spisok2 = [for img in range(1,6)]:
 #
 # #list comprehension пишется в []
-# #for i in range(1,6)  - обычный цикл for --> ск раз повторяется
+# #for img in range(1,6)  - обычный цикл for --> ск раз повторяется
 # #все,что слева от for --> элементы в списке
 # print(spisok2)
 
@@ -35,7 +35,7 @@
 #  l = lambda zxc:True if zxc == "Д" else False
 # while True:
 #     a = int(input("Сколько раз кидаем кубик?"))
-#     dies = [randint (1,6)for i in range(a)]
+#     dies = [randint (1,6)for img in range(a)]
 #     print(dies)     b = input("Выходим? (Д/Н)").upper()
 #     if l(b):# если игрок решил выйти
 #          break
@@ -47,7 +47,7 @@
 #           list("abcdefghijklmnopqrstuvwxyz"),
 #           list("1234567890")
 #          ]
-# a = [choice(choice(chars)) for i in range(6)]
+# a = [choice(choice(chars)) for img in range(6)]
 # a2 = ("".join(a))
 # d = {}
 # link = "https://www.google.com"

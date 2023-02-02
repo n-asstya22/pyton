@@ -12,8 +12,8 @@
 # lst = ["A" , "Б" , "В" , "Г", "Д"]
 # for letter in lst:    #проитерироваться по списку
 #     print(letter)
-# for i in range(0, 3):
-#     print(i)
+# for img in range(0, 3):
+#     print(img)
 
 # word = input("Введи слово:")
 # while word:           #пока словo не пустое

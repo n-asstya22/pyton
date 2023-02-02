@@ -25,8 +25,8 @@
 #      "Доширак" : 30,
 #      "Чипсы" : 80,
 #      "Сок" : 40}
-# for i in d.values():
-#     slu += i
+# for img in d.values():
+#     slu += img
 #
 # print(slu)
 #Задача 3

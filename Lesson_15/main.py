@@ -52,8 +52,8 @@
  #задача2
 # def find_lonest(n:list):
 #     s1 = []
-#     for i in n:
-#         s1.append(len(i))
+#     for img in n:
+#         s1.append(len(img))
 #     maxy = max(s1)
 #     ind = s1.index(maxy) #нашли индекс maxy
 #     return s[ind],maxy
