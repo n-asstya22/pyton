@@ -1,3 +1,4 @@
+
 from random import randint
 # class Person:  # объявление класса
 #     def __init__(self, imya, vozrast):  # метод инициализации
