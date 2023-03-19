@@ -74,7 +74,7 @@ import datetime
 class Clock:
     def __init__(self):
          self.__time = datetime.datetime.now().strftime("%H:%M:%S")
-         #self.__time = "08:07:06"
+
          self.__h, self.__m, self.__s = self.__time.split(":")
          self.__h, self.__m, self.__s = int(self.__h), int(self.__m), int(self.__s)
 
