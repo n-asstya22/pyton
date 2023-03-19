@@ -1,3 +1,5 @@
+import string
+import datetime
 # class Nazvanie:
 #     def __init__(self):
 #      self.money = 1_000 # public
@@ -71,43 +73,40 @@
 #задача_3
 class Clock:
     def __init__(self):
-        self.__time = datetime.datetime.now().strftime("%H:%M:%S")
-        self.h = self.__time.split(":")
-        self.__h, self.__m, self.__s = self.__time.split(":")
-        self.__h, self.__m, self.__s = int(self.__h), int(self.__m), int(self.__s)
-        # self.h = self.__time.split(":")[0]
-        # self.m = self.__time.split(":")[1]
-        # self.s = self.__time.split(":")[2]
+         self.__time = datetime.datetime.now().strftime("%H:%M:%S")
+         #self.__time = "08:07:06"
+         self.__h, self.__m, self.__s = self.__time.split(":")
+         self.__h, self.__m, self.__s = int(self.__h), int(self.__m), int(self.__s)
 
     def hours(self):
         self.__h += 1
 
-        print(self.__h)
-
-    def min(self):
+    def minutes(self):
         self.__m += 1
-        print(self.__m)
 
-    def sec (self):
+    def seconds(self):
         self.__s += 1
-        print(self.__s)
 
-    def ch_h(self):
+    def test_h(self):
         if self.__h > 23:
             self.__h = 0
-    def ch_m(self):
+
+    def test_m(self):
         if self.__m > 59:
             self.__m = 0
+
             self.__h += 1
 
-    def ch_s(self):
-        if self.__s > 59:
-            self.__s = 0
-            self.__m += 1
+
+    def vivod(self):
+        print(f"{str(self.__h).rjust(2, '0')}:{str(self.__m).rjust(2, '0')}:{str(self.__s).rjust(2, '0')}")
 
 
 time_0 = Clock()
-time_0.test_m()
+time_0.minutes()
+# time_0.test_m()
+time_0.vivod()
+
 
 
 
