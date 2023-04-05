@@ -8,6 +8,17 @@ class User:
         self.__password = self.rest["Password"]
         self.name = self.rest['FirstName']
         self.surename = self.rest['LastName']
-        self.posts = [self.__lorem[random.randint(0,5):random.randint(6,60)]]
+        self.posts = [self.__lorem[random.randint(0, 5):random.randint(6,60)]]
+        self.subscriptions = random.randint(0, 1000)
+        self.subscribers = random.randint(0, 1000)
+    def sup(self,s):
+        self.subscriptions += 1
+        s.subscribers += 1
+
+
+
+
+
+
 
 
