@@ -95,20 +95,38 @@
 #
 # print(d)
 #ex8
-a = "111133342215669"
-lst = list(a)
-def count_it(str):
-    d = {
-    }
-    for i in lst:
-        c = lst.count(i)
-        if i not in d.keys():
-            d[i]=c
-    print(d)
-
-
-
-count_it(a)
+# a = "111133342215669"
+# lst = list(a)
+# def count_it(str):
+#     d = {
+#     }
+#     for i in lst:
+#         c = lst.count(i)
+#         if i not in d.keys():
+#             d[i]=c
+#     print(d)
+#
+#
+#
+# count_it(a)
+#
+#ex9(homework)
+cats = [("Мартин", 5, "Алексей", "Егоров"),
+        ("Фродо", 3, "Анна", "Самохина"),
+        ("Вася", 4, "Андрей", "Белов"),
+        ("Муся", 7, "Игорь", "Бероев"),
+        ("Изольда", 2, "Игорь", "Бероев")
+]
+lst = []
+c = ""
+for element in cats:
+        a = element[-1]
+        b = element[-2]
+        for i in cats:
+                if a == i[-1] and b == i[-2] and (element[0] != i[0] or element[1] != i[1]):
+                        c += f" {i[0]}, {i[1]};"
+                        v = f"{i[-2]} {i[-1]}:{c.strip(';')}"
+print(v)
 
 
 
