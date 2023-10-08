@@ -110,24 +110,43 @@
 #
 # count_it(a)
 #
-#ex9(homework)
+#ex9.1(homework)
 cats = [("Мартин", 5, "Алексей", "Егоров"),
         ("Фродо", 3, "Анна", "Самохина"),
         ("Вася", 4, "Андрей", "Белов"),
         ("Муся", 7, "Игорь", "Бероев"),
         ("Изольда", 2, "Игорь", "Бероев")
 ]
-lst = []
-c = ""
-for element in cats:
-        a = element[-1]
-        b = element[-2]
-        for i in cats:
-                if a == i[-1] and b == i[-2] and (element[0] != i[0] or element[1] != i[1]):
-                        c += f" {i[0]}, {i[1]};"
-                        v = f"{i[-2]} {i[-1]}:{c.strip(';')}"
-print(v)
-
+# lst = []
+# c = ""
+# for element in cats:
+#         a = element[-1]
+#         b = element[-2]
+#         for i in cats:
+#                 if a == i[-1] and b == i[-2] and (element[0] != i[0] or element[1] != i[1]):
+#                         c += f" {i[0]}, {i[1]};"
+#                         v = f"{i[-2]} {i[-1]}:{c.strip(';')}"
+# print(v)
+#ex9.2 не решено
+# d = {
+#
+# }
+# lst = []
+# lstt = []
+# for i in cats:
+#         # for v in d.keys():
+#         #         if v  in d.keys():
+#         d[i[-1]+ " "+i[-2]] = i[0],i[1]
+# print(d)
+#
+# for i in d.keys():
+#         if i not in lst:
+#                 lst.append(i)
+#
+#         else:
+#                 lstt.append(i)
+# # print(lst,lstt)
+#
 
 
 
