@@ -1,0 +1,69 @@
+import telebot
+# сохраняем токен в переменную в виде строки
+TOKEN = '6466987617:AAFJSeU8QL09xKjNcqMKm9jIN3JFdLPwjm8'
+# создаем бота и передаем токен доступа
+bot = telebot.TeleBot(TOKEN)
+
+
+# добавляем декоратор, который указывает кака функция обрабатывает какой вид сообщений
+@bot.message_handler(commands=['start'])
+def handle_start_command(message):
+    bot.send_message(message.chat.id,
+                     "Приют — обязательное условие для функционирования всей системы по обращению с животными. В приют доставляют животных, которых поймали на улицах, там же оставляют тех, кого нельзя выпустить в естественную среду. И туда же приходят люди, которые могут забрать животное домой.Но,к сожелению, приюты по всей стране испытывают недостаток в финансах и волонтерской помощи.Предлагаем вам узнать какие приюты находятся в вашем городе")
+    
+    with open('вщпп.jpg', mode='rb') as image:
+        # в переменной image лежит байтовая строка
+        # передаем такую строку в сообщении
+        bot.send_photo(message.chat.id, image)
+
+    keyboard = telebot.types.InlineKeyboardMarkup()
+    btn1 = telebot.types.InlineKeyboardButton(
+        'Новосибирск', callback_data='1'
+    )
+    btn2 = telebot.types.InlineKeyboardButton(
+        'Красноярск', callback_data='2'
+    )
+    btn3 = telebot.types.InlineKeyboardButton(
+        'Омск', callback_data='3'
+    )
+    btn4 = telebot.types.InlineKeyboardButton(
+        'Барнаул', callback_data='4'
+    )
+    btn5 = telebot.types.InlineKeyboardButton(
+        'Томск', callback_data='5'
+    )
+    keyboard.add(btn1, btn2, btn3, btn4, btn5)
+    bot.send_message(message.chat.id, "Выберите город:", reply_markup=keyboard)
+
+
+@bot.callback_query_handler(func=lambda callback_data: True)
+def handle_callback(callback_data):
+
+    if callback_data.data == '1':
+        bot.send_photo(callback_data.message.chat.id,"https://img.geliophoto.com/nsk2020w/15_nsk2020w.jpg","Список приютов в Новосибирске:\n Вдобрые руки\n Адрес: Депутатская ул., 38, Новосибирск \n Телефон: +79130094050\n Соц. сети:\n Vk - https://vk.com/v_dobrie_ruki_nsk?utm_source=spravker&utm_medium=organic\n\n ГОО «Защити животных»\n Адрес: городской округ Новосибирск, Северный проезд, 9/4 \n Сайт:https://priyt54.ru/about/ \n Tелефон: +7(383) 214-92-91 \n Соц. сети:\n Vk - https://vk.com/zoozashita_ru")
+        
+        bot.answer_callback_query(callback_data.id, 'список отправлен')
+    
+    elif callback_data.data == '2':
+        bot.send_photo(callback_data.message.chat.id,"https://upload.wikimedia.org/wikipedia/commons/d/db/Речной_вокзал_Красноярск_2020.jpg"," Список приютов в Красноянрске:\n Дружок\n Адрес: Улица Затонская, 70 ст2 \n Телефон: +73912314911\n ")
+        bot.answer_callback_query(callback_data.id, 'список отправлен')
+        
+    elif callback_data.data == '3':
+        bot.send_photo(callback_data.message.chat.id,"https://img.geliophoto.com/omsk2020/22_omsk2020.jpg"," Список приютов в Омске:\n Друг\n Адрес: 2-я Учхозная ул., 2А, Омск\n Сайт: dog-omsk.ru\n Телефон: +7 (903) 927-22-20 \n\n Омские хвостики\n Адрес: 1-я Казахстанская ул., 3, корп. 4, Омск\n Сайт: planeta.ru/campaigns/hvostdom\n Телефон: +7 (3812) 49-87-66\n Соц. сети:\n Vk - https://planeta.ru/api/util/away.html?to=https%3A%2F%2Fvk.com/omskhvostik\n Тelegram - https://planeta.ru/api/util/away.html?to=https%3A%2F%2Ft.me/hvostikomsk55\n Instagram - https://planeta.ru/api/util/away.html?to=https%3A%2F%2Fwww.instagram.com/omskhvostik ")
+
+        bot.answer_callback_query(callback_data.id, 'список отправлен')
+        
+    elif callback_data.data == '4':
+        bot.send_photo(callback_data.message.chat.id,"https://barcaffe.ru/wp-content/uploads/2022/04/brn2021_07.jpg"," Список приютов в Барнауле:\n Модный друг\n Адрес: Социалистический пр., 105, Барнаул\n Телефон: 8 (983) 188-91-12\n\n Ласка\n Aдрес: Проспект Космонавтов, 52а, Барнаул\n Телефон: +79095012579, +73852573557")
+        bot.answer_callback_query(callback_data.id, 'список отправлен')
+    
+    elif callback_data.data == '5':
+        bot.send_photo(callback_data.message.chat.id,"https://barcaffe.ru/wp-content/uploads/2020/07/34_tomsk.jpg"," Список приютов в Томске:\n Добрые руки\n Адрес: Колхозный пер., 1, д. Новомихайловка\n Сайт: dr.tom.ru\n Телефон: +7 (909) 546-26-37\n Соц. сети:\n Vk - http://vkontakte.ru/share.php?url=http://dr.tom.ru\n Facebook - http://www.facebook.com/sharer.php?u=http://dr.tom.ru")
+        bot.answer_callback_query(callback_data.id, 'список отправлен')
+    
+        
+
+bot.polling(
+    non_stop=True,  # отправка запросов без остановки один за одним
+    interval=1  # интервал между запросами
+)
